@@ -5,7 +5,14 @@ import React, { memo } from 'react';
 
 import GenericModal from '../../../components/GenericModal';
 
-const TriggersRow = memo(function TriggersRow(props) {
+const TriggersRow = memo(function TriggersRow(props: {
+	_id: string;
+	name?: string;
+	description?: string;
+	enabled?: boolean;
+	onDelete: () => void;
+	medium: boolean;
+}) {
 	const { _id, name, description, enabled, onDelete } = props;
 
 	const dispatchToastMessage = useToastMessageDispatch();
