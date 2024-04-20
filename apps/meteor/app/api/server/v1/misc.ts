@@ -425,7 +425,7 @@ API.v1.addRoute(
 
 			const user = await Users.findOneByResetToken(token, { projection: { _id: 1 } });
 			if (!user) {
-				return API.v1.unauthorized();
+				return API.v1.forbidden();
 			}
 
 			return API.v1.success(passwordPolicy.getPasswordPolicy());
@@ -475,7 +475,7 @@ API.v1.addRoute(
 	{
 		async get() {
 			if (!(await hasPermissionAsync(this.userId, 'view-logs'))) {
-				return API.v1.unauthorized();
+				return API.v1.forbidden();
 			}
 			return API.v1.success({ queue: getLogs() });
 		},
