@@ -1,7 +1,7 @@
-// import { IInstanceStatus } from '@rocket.chat/core-typings';
 import { EventEmitter } from 'events';
 
 import { InstanceStatus as InstanceStatusModel } from '@rocket.chat/models';
+import type { UpdateResult } from 'mongodb';
 import { v4 as uuidv4 } from 'uuid';
 
 const events = new EventEmitter();
@@ -76,16 +76,15 @@ async function registerInstance(name: string, extraInformation: Record<string, u
 
 	try {
 		await InstanceStatusModel.updateOne({ _id: ID }, instance as any, { upsert: true });
-
-		const result = await InstanceStatusModel.findOne({ _id: ID });
+		const instanceStatus = await InstanceStatusModel.findOneById(ID);
 
 		start();
 
-		events.emit('registerInstance', result, instance);
+		events.emit('registerInstance', instanceStatus, instance);
 
 		process.on('exit', onExit);
 
-		return result;
+		return instanceStatus;
 	} catch (e) {
 		return e;
 	}
@@ -147,8 +146,8 @@ async function onExit() {
 	await unregisterInstance();
 }
 
-async function updateConnections(conns: number) {
-	await InstanceStatusModel.updateOne(
+async function updateConnections(conns: number): Promise<UpdateResult> {
+	return InstanceStatusModel.updateOne(
 		{
 			_id: ID,
 		},
