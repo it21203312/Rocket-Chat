@@ -51,7 +51,7 @@ export const RoomTopic = ({ room, user }: RoomTopicProps) => {
 	if (!topic && !roomLeader) return null;
 
 	return (
-		<RoomBanner className='rcx-header-section' role='note'>
+		<RoomBanner className='rcx-header-section' role='note' aria-label={topic}>
 			<RoomBannerContent>
 				{roomLeader && !topic && canEdit ? (
 					<Box is='a' href={href}>
