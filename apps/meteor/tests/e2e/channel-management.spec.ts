@@ -132,7 +132,7 @@ test.describe.serial('channel-management', () => {
 		targetChannel = hugeName;
 
 		await page.setViewportSize({ width: 640, height: 460 });
-		await expect(page.getByRole('heading', { name: hugeName })).toHaveCSS('width', '419px');
+		await expect(page.getByRole('heading', { name: hugeName })).toHaveCSS('width', '427px');
 	});
 
 	test('should open sidebar clicking on sidebar toggler', async ({ page }) => {

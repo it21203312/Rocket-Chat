@@ -79,6 +79,7 @@ export class HomeSidenav {
 	}
 
 	async selectMarkAsUnread(name: string) {
+		await this.typeSearch(name);
 		const sidebarItem = this.getSidebarItemByName(name);
 		await sidebarItem.focus();
 		await sidebarItem.locator('.rcx-sidebar-v2-item__menu-wrapper').click();
