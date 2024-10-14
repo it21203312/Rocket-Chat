@@ -56,8 +56,8 @@ export class HomeSidenav {
 	async setDisplayMode(mode: 'Extended' | 'Medium' | 'Condensed'): Promise<void> {
 		const displayButton = this.sidebarSearchSection.getByRole('button', { name: 'Display', exact: true });
 		await displayButton.click();
-		await this.sidebarSearchSection.getByRole('group', { name: 'Display' }).getByRole('menuitemcheckbox', { name: mode }).click();
-		await displayButton.click();
+		await this.sidebarSearchSection.getByRole('menuitemcheckbox', { name: mode }).click();
+		await this.page.keyboard.press('Escape');
 	}
 
 	// Note: this is different from openChat because queued chats are not searchable

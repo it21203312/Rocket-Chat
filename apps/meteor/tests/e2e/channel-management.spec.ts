@@ -77,7 +77,7 @@ test.describe.serial('channel-management', () => {
 
 		await poHomeChannel.dismissToast();
 		await poHomeChannel.tabs.btnRoomInfo.click();
-		await expect(page.getByRole('heading', { name: 'hello-topic-edited' })).toBeVisible();
+		await expect(page.getByRole('note', { name: 'hello-topic-edited' })).toBeVisible();
 		await expect(page.getByRole('dialog', { name: 'Channel info' })).toContainText('hello-topic-edited');
 		await expect(poHomeChannel.content.getSystemMessageByText('changed room topic to hello-topic-edited')).toBeVisible();
 	});
