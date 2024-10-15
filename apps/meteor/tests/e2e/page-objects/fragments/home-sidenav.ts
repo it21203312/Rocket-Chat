@@ -80,7 +80,7 @@ export class HomeSidenav {
 
 	async selectMarkAsUnread(name: string) {
 		await this.typeSearch(name);
-		const sidebarItem = this.getSidebarItemByName(name);
+		const sidebarItem = this.getSearchRoomByName(name);
 		await sidebarItem.focus();
 		await sidebarItem.locator('.rcx-sidebar-v2-item__menu-wrapper').click();
 		await this.page.getByRole('listbox').getByRole('option', { name: 'Mark Unread' }).click();
