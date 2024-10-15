@@ -189,6 +189,6 @@ export class HomeSidenav {
 	}
 
 	getSearchChannelBadge(name: string): Locator {
-		return this.page.locator(`[data-qa="sidebar-item"][aria-label="${name}"]`).first().getByRole('status', { exact: true });
+		return this.getSearchRoomByName(name).getByRole('status');
 	}
 }
