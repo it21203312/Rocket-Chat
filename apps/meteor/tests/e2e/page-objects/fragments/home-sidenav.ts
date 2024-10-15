@@ -37,6 +37,18 @@ export class HomeSidenav {
 		return this.page.locator('role=button[name="Create"]');
 	}
 
+	get pagesToolbar(): Locator {
+		return this.page.getByRole('navigation', { name: 'header' }).getByRole('toolbar', { name: 'Pages' });
+	}
+
+	get directoryButton(): Locator {
+		return this.pagesToolbar.getByRole('button', { name: 'Directory', exact: true });
+	}
+
+	get homeButton(): Locator {
+		return this.pagesToolbar.getByRole('button', { name: 'Home', exact: true });
+	}
+
 	get userProfileMenu(): Locator {
 		return this.page.getByRole('navigation', { name: 'header' }).getByRole('button', { name: 'User menu', exact: true });
 	}

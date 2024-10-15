@@ -13,11 +13,10 @@ test.describe.serial('sidebar', () => {
 		await page.goto('/home');
 	});
 
-	test('should navigate on sidebar toolbar using arrow keys', async ({ page }) => {
-		await poHomeDiscussion.sidenav.userProfileMenu.focus();
-		await page.keyboard.press('Tab');
-		await page.keyboard.press('ArrowDown');
-		await expect(poHomeDiscussion.sidenav.sidebarSearchSection.getByRole('searchbox', { name: 'Search' })).toBeFocused();
+	test('should navigate on navbar toolbar using arrow keys', async ({ page }) => {
+		await poHomeDiscussion.sidenav.homeButton.focus();
+		await page.keyboard.press('ArrowRight');
+		await expect(poHomeDiscussion.sidenav.directoryButton).toBeFocused();
 	});
 
 	test('should navigate through search results using keyboard', async ({ page }) => {
