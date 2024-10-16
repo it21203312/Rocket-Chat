@@ -7,6 +7,10 @@ export class OmnichannelSection {
 		this.page = page;
 	}
 
+	get omnichannelToolbar(): Locator {
+		return this.page.getByRole('navigation', { name: 'header' }).getByRole('toolbar', { name: 'Omnichannel' });
+	}
+
 	get element(): Locator {
 		return this.page.locator('div[data-qa-id="omncSection"]');
 	}
@@ -16,10 +20,10 @@ export class OmnichannelSection {
 	}
 
 	get btnDialpad(): Locator {
-		return this.page.locator('role=button[name="Open Dialpad"]');
+		return this.omnichannelToolbar.getByRole('button', { name: 'Open Dialpad' });
 	}
 
 	get btnContactCenter(): Locator {
-		return this.page.locator('role=button[name="Contact Center"]');
+		return this.omnichannelToolbar.getByRole('button', { name: 'Contacts' });
 	}
 }

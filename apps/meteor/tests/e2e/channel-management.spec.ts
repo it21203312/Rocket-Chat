@@ -77,7 +77,7 @@ test.describe.serial('channel-management', () => {
 
 		await poHomeChannel.dismissToast();
 		await poHomeChannel.tabs.btnRoomInfo.click();
-		await expect(page.getByRole('heading', { name: 'hello-topic-edited' })).toBeVisible();
+		await expect(page.getByRole('note', { name: 'hello-topic-edited' })).toBeVisible();
 		await expect(page.getByRole('dialog', { name: 'Channel info' })).toContainText('hello-topic-edited');
 		await expect(poHomeChannel.content.getSystemMessageByText('changed room topic to hello-topic-edited')).toBeVisible();
 	});
@@ -132,7 +132,7 @@ test.describe.serial('channel-management', () => {
 		targetChannel = hugeName;
 
 		await page.setViewportSize({ width: 640, height: 460 });
-		await expect(page.getByRole('heading', { name: hugeName })).toHaveCSS('width', '419px');
+		await expect(page.getByRole('heading', { name: hugeName })).toHaveCSS('width', '427px');
 	});
 
 	test('should open sidebar clicking on sidebar toggler', async ({ page }) => {
@@ -141,7 +141,7 @@ test.describe.serial('channel-management', () => {
 		await page.setViewportSize({ width: 640, height: 460 });
 		await page.getByRole('button', { name: 'Open sidebar' }).click();
 
-		await expect(page.getByRole('navigation')).toBeVisible();
+		await expect(page.getByRole('navigation', { name: 'sidebar' })).toBeVisible();
 	});
 
 	test('should open room info when clicking on roomName', async ({ page }) => {

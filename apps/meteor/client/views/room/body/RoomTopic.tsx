@@ -9,7 +9,7 @@ import { RoomRoles } from '../../../../app/models/client';
 import MarkdownText from '../../../components/MarkdownText';
 import { usePresence } from '../../../hooks/usePresence';
 import { useReactiveQuery } from '../../../hooks/useReactiveQuery';
-import RoomLeader from '../HeaderV2/RoomLeader';
+import RoomLeader from '../Header/RoomLeader';
 import { useCanEditRoom } from '../contextualBar/Info/hooks/useCanEditRoom';
 
 type RoomTopicProps = {
@@ -51,7 +51,7 @@ export const RoomTopic = ({ room, user }: RoomTopicProps) => {
 	if (!topic && !roomLeader) return null;
 
 	return (
-		<RoomBanner className='rcx-header-section' role='note'>
+		<RoomBanner className='rcx-header-section' role='note' aria-label={topic}>
 			<RoomBannerContent>
 				{roomLeader && !topic && canEdit ? (
 					<Box is='a' href={href}>
