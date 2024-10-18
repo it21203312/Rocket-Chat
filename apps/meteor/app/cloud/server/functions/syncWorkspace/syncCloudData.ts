@@ -59,17 +59,17 @@ const fetchWorkspaceSyncPayload = async ({
 				type: 'callout',
 				title: {
 					type: 'plain_text',
-					text: 'Callout Title',
+					text: 'Workspace eligible for Starter Plan',
 				},
 				text: {
 					type: 'plain_text',
-					text: 'Callout Text',
+					text: 'Get free access to premium capabilities for up to 50 users',
 				},
 				accessory: {
 					type: 'button',
 					text: {
 						type: 'plain_text',
-						text: 'Callout Action',
+						text: 'Switch Plan',
 					},
 					actionId: 'callout-action',
 					appId: 'cloud-announcements-core',
