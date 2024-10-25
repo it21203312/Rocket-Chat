@@ -22,11 +22,19 @@ API.v1.addRoute(
 				currentValues: loadCurrentValues,
 			});
 
-			const cloudSyncAnnouncementSetting = await Settings.findOneById('Cloud_Sync_Announcement_Payload');
 			let cloudSyncAnnouncement;
+			if (canManageCloud) {
+				try {
+					const cloudSyncAnnouncementSetting = await Settings.findOneById('Cloud_Sync_Announcement_Payload');
+					// TODO: Remove this logic after setting type object is implemented.
+					if (typeof cloudSyncAnnouncementSetting?.value === 'string') {
+						cloudSyncAnnouncement = JSON.parse(cloudSyncAnnouncementSetting.value);
+					}
 
-			if (canManageCloud && cloudSyncAnnouncementSetting?.value) {
-				cloudSyncAnnouncement = JSON.parse(cloudSyncAnnouncementSetting.value as string);
+					cloudSyncAnnouncement = undefined;
+				} catch (error) {
+					console.error('Unable to parse Cloud_Sync_Announcement_Payload');
+				}
 			}
 
 			return API.v1.success({
