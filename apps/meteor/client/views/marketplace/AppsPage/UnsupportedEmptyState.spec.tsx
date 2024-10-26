@@ -3,7 +3,6 @@ import { render, screen } from '@testing-library/react';
 import React from 'react';
 
 import { MarketplaceContext } from '../../../contexts/MarketplaceContext';
-import { asyncState } from '../../../lib/asyncState';
 import UnsupportedEmptyState from './UnsupportedEmptyState';
 
 describe('with private apps enabled', () => {
@@ -14,9 +13,15 @@ describe('with private apps enabled', () => {
 		.wrap((children) => (
 			<MarketplaceContext.Provider
 				value={{
-					installedApps: asyncState.resolved({ apps: [] }),
-					marketplaceApps: asyncState.rejected(new Error('unsupported version')),
-					privateApps: asyncState.resolved({ apps: [] }),
+					apps: {
+						status: 'error',
+						data: {
+							marketplace: [],
+							installed: [],
+							private: [],
+						},
+						error: new Error('unsupported version'),
+					},
 					privateAppsEnabled: true,
 					reload: () => Promise.resolve(),
 					orchestrator: undefined,

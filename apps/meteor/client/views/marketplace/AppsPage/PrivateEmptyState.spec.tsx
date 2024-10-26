@@ -3,7 +3,6 @@ import { render, screen } from '@testing-library/react';
 import React from 'react';
 
 import { MarketplaceContext } from '../../../contexts/MarketplaceContext';
-import { asyncState } from '../../../lib/asyncState';
 import PrivateEmptyState from './PrivateEmptyState';
 
 describe('with private apps enabled', () => {
@@ -15,9 +14,15 @@ describe('with private apps enabled', () => {
 		.wrap((children) => (
 			<MarketplaceContext.Provider
 				value={{
-					installedApps: asyncState.resolved({ apps: [] }),
-					marketplaceApps: asyncState.resolved({ apps: [] }),
-					privateApps: asyncState.resolved({ apps: [] }),
+					apps: {
+						status: 'success',
+						data: {
+							marketplace: [],
+							installed: [],
+							private: [],
+						},
+						error: undefined,
+					},
 					reload: () => Promise.resolve(),
 					orchestrator: undefined,
 					privateAppsEnabled: true,
@@ -43,9 +48,15 @@ describe('without private apps enabled', () => {
 		.wrap((children) => (
 			<MarketplaceContext.Provider
 				value={{
-					installedApps: asyncState.resolved({ apps: [] }),
-					marketplaceApps: asyncState.resolved({ apps: [] }),
-					privateApps: asyncState.resolved({ apps: [] }),
+					apps: {
+						status: 'success',
+						data: {
+							marketplace: [],
+							installed: [],
+							private: [],
+						},
+						error: undefined,
+					},
 					reload: () => Promise.resolve(),
 					orchestrator: undefined,
 					privateAppsEnabled: false,
