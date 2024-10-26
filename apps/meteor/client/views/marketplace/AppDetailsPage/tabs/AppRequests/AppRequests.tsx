@@ -6,7 +6,7 @@ import type { ReactElement, SetStateAction } from 'react';
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { useAppsReload } from '../../../../../contexts/hooks/useAppsReload';
+import { useAppsResult } from '../../../../../contexts/hooks/useAppsResult';
 import { queryClient } from '../../../../../lib/queryClient';
 import { useAppRequests } from '../../../hooks/useAppRequests';
 import AppRequestItem from './AppRequestItem';
@@ -24,7 +24,7 @@ const AppRequests = ({ id, isAdminUser }: { id: App['id']; isAdminUser: boolean 
 	const onSetItemsPerPage = (itemsPerPageOption: SetStateAction<itemsPerPage>) => setLimit(itemsPerPageOption);
 	const onSetCurrent = (currentItemsOption: SetStateAction<number>) => setOffset(currentItemsOption);
 
-	const reloadApps = useAppsReload();
+	const { reload: reloadApps } = useAppsResult();
 	const markSeen = useEndpoint('POST', '/apps/app-request/markAsSeen');
 	const markAppRequestsAsSeen = useMutation({
 		mutationKey: ['mark-app-requests-as-seen'],

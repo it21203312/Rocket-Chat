@@ -2,6 +2,7 @@ import type { App } from '@rocket.chat/core-typings';
 import { useEndpoint, useRouteParameter, useSetModal, useToastMessageDispatch } from '@rocket.chat/ui-contexts';
 import React, { useCallback } from 'react';
 
+import { useAppsResult } from '../../../contexts/hooks/useAppsResult';
 import { useExternalLink } from '../../../hooks/useExternalLink';
 import { useCheckoutUrl } from '../../admin/subscription/hooks/useCheckoutUrl';
 import IframeModal from '../IframeModal';
@@ -9,7 +10,6 @@ import AppInstallModal from '../components/AppInstallModal/AppInstallModal';
 import type { Actions } from '../helpers';
 import { handleAPIError } from '../helpers/handleAPIError';
 import { isMarketplaceRouteContext, useAppsCountQuery } from './useAppsCountQuery';
-import { useAppsOrchestration } from './useAppsOrchestration';
 import { useOpenAppPermissionsReviewModal } from './useOpenAppPermissionsReviewModal';
 import { useOpenIncompatibleModal } from './useOpenIncompatibleModal';
 
@@ -60,7 +60,7 @@ export function useAppInstallationHandler({
 
 	const openPermissionModal = useOpenAppPermissionsReviewModal({ app, onCancel: closeModal, onConfirm: success });
 
-	const appsOrchestrator = useAppsOrchestration();
+	const { orchestrator: appsOrchestrator } = useAppsResult();
 
 	if (!appsOrchestrator) {
 		throw new Error('Apps orchestrator is not available');

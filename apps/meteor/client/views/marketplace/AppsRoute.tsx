@@ -3,7 +3,7 @@ import type { ReactElement } from 'react';
 import React, { useState, useEffect } from 'react';
 
 import PageSkeleton from '../../components/PageSkeleton';
-import AppsProvider from '../../providers/AppsProvider';
+import MarketplaceProvider from '../../providers/AppsProvider';
 import NotAuthorizedPage from '../notAuthorized/NotAuthorizedPage';
 import AppDetailsPage from './AppDetailsPage';
 import AppInstallPage from './AppInstallPage';
@@ -56,12 +56,12 @@ const AppsRoute = (): ReactElement => {
 	}
 
 	return (
-		<AppsProvider>
+		<MarketplaceProvider>
 			<BannerEnterpriseTrialEnded />
 			{(page === 'list' && <AppsPage />) ||
 				(id && page === 'info' && <AppDetailsPage id={id} />) ||
 				(page === 'install' && <AppInstallPage />)}
-		</AppsProvider>
+		</MarketplaceProvider>
 	);
 };
 

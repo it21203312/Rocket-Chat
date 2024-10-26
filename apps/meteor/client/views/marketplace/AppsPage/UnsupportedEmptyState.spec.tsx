@@ -2,7 +2,7 @@ import { mockAppRoot } from '@rocket.chat/mock-providers';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 
-import { AppsContext } from '../../../contexts/AppsContext';
+import { MarketplaceContext } from '../../../contexts/MarketplaceContext';
 import { asyncState } from '../../../lib/asyncState';
 import UnsupportedEmptyState from './UnsupportedEmptyState';
 
@@ -12,7 +12,7 @@ describe('with private apps enabled', () => {
 			Marketplace_unavailable: 'Marketplace unavailable',
 		})
 		.wrap((children) => (
-			<AppsContext.Provider
+			<MarketplaceContext.Provider
 				value={{
 					installedApps: asyncState.resolved({ apps: [] }),
 					marketplaceApps: asyncState.rejected(new Error('unsupported version')),
@@ -23,7 +23,7 @@ describe('with private apps enabled', () => {
 				}}
 			>
 				{children}
-			</AppsContext.Provider>
+			</MarketplaceContext.Provider>
 		));
 
 	it('should inform that the marketplace is unavailable due unsupported version', () => {

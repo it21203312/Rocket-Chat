@@ -2,7 +2,7 @@ import { mockAppRoot } from '@rocket.chat/mock-providers';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 
-import { AppsContext } from '../../../contexts/AppsContext';
+import { MarketplaceContext } from '../../../contexts/MarketplaceContext';
 import { asyncState } from '../../../lib/asyncState';
 import PrivateEmptyState from './PrivateEmptyState';
 
@@ -13,7 +13,7 @@ describe('with private apps enabled', () => {
 			No_private_apps_installed: 'No private apps installed',
 		})
 		.wrap((children) => (
-			<AppsContext.Provider
+			<MarketplaceContext.Provider
 				value={{
 					installedApps: asyncState.resolved({ apps: [] }),
 					marketplaceApps: asyncState.resolved({ apps: [] }),
@@ -24,7 +24,7 @@ describe('with private apps enabled', () => {
 				}}
 			>
 				{children}
-			</AppsContext.Provider>
+			</MarketplaceContext.Provider>
 		));
 
 	it('should offer to upgrade to unlock private apps', () => {
@@ -41,7 +41,7 @@ describe('without private apps enabled', () => {
 			No_private_apps_installed: 'No private apps installed',
 		})
 		.wrap((children) => (
-			<AppsContext.Provider
+			<MarketplaceContext.Provider
 				value={{
 					installedApps: asyncState.resolved({ apps: [] }),
 					marketplaceApps: asyncState.resolved({ apps: [] }),
@@ -52,7 +52,7 @@ describe('without private apps enabled', () => {
 				}}
 			>
 				{children}
-			</AppsContext.Provider>
+			</MarketplaceContext.Provider>
 		));
 
 	it('should offer to upgrade to unlock private apps', () => {

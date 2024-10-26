@@ -4,7 +4,7 @@ import { useMutation } from '@tanstack/react-query';
 import React, { useCallback, useState } from 'react';
 
 import { AppClientOrchestratorInstance } from '../../../apps/orchestrator';
-import { useAppsReload } from '../../../contexts/hooks/useAppsReload';
+import { useAppsResult } from '../../../contexts/hooks/useAppsResult';
 import AppPermissionsReviewModal from '../AppPermissionsReviewModal';
 import AppUpdateModal from '../AppUpdateModal';
 import { handleAPIError } from '../helpers/handleAPIError';
@@ -13,7 +13,7 @@ import { getManifestFromZippedApp } from '../lib/getManifestFromZippedApp';
 import { useAppsCountQuery } from './useAppsCountQuery';
 
 export const useInstallApp = (file: File): { install: () => void; isInstalling: boolean } => {
-	const reloadAppsList = useAppsReload();
+	const { reload: reloadAppsList } = useAppsResult();
 	const setModal = useSetModal();
 
 	const router = useRouter();
