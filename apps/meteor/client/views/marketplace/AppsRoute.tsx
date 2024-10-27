@@ -1,5 +1,4 @@
 import { useRouteParameter, useRoute, usePermission } from '@rocket.chat/ui-contexts';
-import type { ReactElement } from 'react';
 import React, { useState, useEffect } from 'react';
 
 import PageSkeleton from '../../components/PageSkeleton';
@@ -10,7 +9,7 @@ import AppsOrchestratorProvider from './AppsOrchestratorProvider';
 import AppsPage from './AppsPage';
 import BannerEnterpriseTrialEnded from './components/BannerEnterpriseTrialEnded';
 
-const AppsRoute = (): ReactElement => {
+const AppsRoute = () => {
 	const [isLoading, setLoading] = useState(true);
 	const marketplaceRoute = useRoute('marketplace');
 
