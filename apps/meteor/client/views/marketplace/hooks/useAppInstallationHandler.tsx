@@ -1,5 +1,5 @@
 import type { App } from '@rocket.chat/core-typings';
-import { useEndpoint, useRouteParameter, useSetModal, useToastMessageDispatch } from '@rocket.chat/ui-contexts';
+import { useEndpoint, useSetModal, useToastMessageDispatch } from '@rocket.chat/ui-contexts';
 import React, { useCallback } from 'react';
 
 import { useExternalLink } from '../../../hooks/useExternalLink';
@@ -8,8 +8,9 @@ import IframeModal from '../IframeModal';
 import AppInstallModal from '../components/AppInstallModal/AppInstallModal';
 import type { Actions } from '../helpers';
 import { handleAPIError } from '../helpers/handleAPIError';
-import { isMarketplaceRouteContext, useAppsCountQuery } from './useAppsCountQuery';
+import { useAppsCountQuery } from './useAppsCountQuery';
 import { useAppsOrchestrator } from './useAppsOrchestrator';
+import { useMarketplaceContext } from './useMarketplaceContext';
 import { useOpenAppPermissionsReviewModal } from './useOpenAppPermissionsReviewModal';
 import { useOpenIncompatibleModal } from './useOpenIncompatibleModal';
 
@@ -33,8 +34,7 @@ export function useAppInstallationHandler({
 	const dispatchToastMessage = useToastMessageDispatch();
 	const setModal = useSetModal();
 
-	const routeContext = String(useRouteParameter('context'));
-	const context = isMarketplaceRouteContext(routeContext) ? routeContext : 'explore';
+	const context = useMarketplaceContext();
 
 	const appCountQuery = useAppsCountQuery(context);
 

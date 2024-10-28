@@ -11,6 +11,7 @@ import { AppClientOrchestratorInstance } from '../../../apps/orchestrator';
 import { Page, PageFooter, PageHeader, PageScrollableContentWithShadow } from '../../../components/Page';
 import { handleAPIError } from '../helpers/handleAPIError';
 import { useAppInfo } from '../hooks/useAppInfo';
+import { useMarketplaceContext } from '../hooks/useMarketplaceContext';
 import AppDetailsPageHeader from './AppDetailsPageHeader';
 import AppDetailsPageLoading from './AppDetailsPageLoading';
 import AppDetailsPageTabs from './AppDetailsPageTabs';
@@ -28,7 +29,7 @@ const AppDetailsPage = ({ id }: { id: App['id'] }): ReactElement => {
 	const isAdminUser = usePermission('manage-apps');
 
 	const tab = useRouteParameter('tab');
-	const context = useRouteParameter('context');
+	const context = useMarketplaceContext();
 	const appData = useAppInfo(id, context || '');
 
 	const handleReturn = useMutableCallback((): void => {
