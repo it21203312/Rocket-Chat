@@ -28,4 +28,7 @@ export interface ILivechatContactsModel extends IBaseModel<ILivechatContact> {
 		originalContactId: string,
 		options?: FindOptions<ILivechatContact>,
 	): Promise<ILivechatContact[]>;
+	isContactActiveOnPeriod(visitorId: string, period: string): Promise<boolean>;
+	markContactActiveForPeriod(visitorId: string, period: string): Promise<UpdateResult>;
+	countContactsOnPeriod(period: string): Promise<number>;
 }
