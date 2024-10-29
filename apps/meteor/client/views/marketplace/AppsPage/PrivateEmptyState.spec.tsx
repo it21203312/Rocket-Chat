@@ -17,7 +17,7 @@ describe('with private apps enabled', () => {
 			() =>
 				({
 					data: { limits: { privateApps: { max: 1 } } },
-				} as any),
+				}) as any,
 		);
 	});
 
@@ -42,7 +42,7 @@ describe('without private apps enabled', () => {
 			() =>
 				({
 					data: { limits: { privateApps: { max: 0 } } },
-				} as any),
+				}) as any,
 		);
 	});
 
