@@ -30,8 +30,6 @@ API.v1.addRoute(
 					if (typeof cloudSyncAnnouncementSetting?.value === 'string') {
 						cloudSyncAnnouncement = JSON.parse(cloudSyncAnnouncementSetting.value);
 					}
-
-					cloudSyncAnnouncement = undefined;
 				} catch (error) {
 					console.error('Unable to parse Cloud_Sync_Announcement_Payload');
 				}
