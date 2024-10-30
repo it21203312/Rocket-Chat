@@ -1,6 +1,7 @@
 import { Button, Modal } from '@rocket.chat/fuselage';
 import { useEffectEvent, useUniqueId } from '@rocket.chat/fuselage-hooks';
 import type { Keys as IconName } from '@rocket.chat/icons';
+import { useMutation } from '@tanstack/react-query';
 import type { ComponentProps, ReactElement, ReactNode, ComponentPropsWithoutRef } from 'react';
 import React, { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -21,6 +22,7 @@ type GenericModalProps = RequiredModalProps & {
 	tagline?: ReactNode;
 	onCancel?: () => Promise<void> | void;
 	onClose?: () => Promise<void> | void;
+	onConfirm?: () => Promise<void> | void;
 	onDismiss?: () => Promise<void> | void;
 	annotation?: ReactNode;
 } & Omit<ComponentPropsWithoutRef<typeof Modal>, 'title'>;
@@ -82,9 +84,11 @@ const GenericModal = ({
 
 	const dismissedRef = useRef(true);
 
-	const handleConfirm = useEffectEvent(() => {
-		dismissedRef.current = false;
-		onConfirm?.();
+	const handleConfirm = useMutation({
+		mutationFn: async () => {
+			dismissedRef.current = false;
+			await onConfirm?.();
+		},
 	});
 
 	const handleCancel = useEffectEvent(() => {
@@ -131,7 +135,12 @@ const GenericModal = ({
 						</Button>
 					)}
 					{!wrapperFunction && onConfirm && (
-						<Button {...getButtonProps(variant)} onClick={handleConfirm} disabled={confirmDisabled}>
+						<Button
+							{...getButtonProps(variant)}
+							loading={handleConfirm.isLoading}
+							onClick={() => handleConfirm.mutate()}
+							disabled={confirmDisabled}
+						>
 							{confirmText ?? t('Ok')}
 						</Button>
 					)}
