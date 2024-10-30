@@ -89,7 +89,7 @@ const AppDetails = ({ appId }: AppDetailsProps) => {
 						)}
 					</Box>
 
-					{isSuccess && (
+					{isSuccess && data.categories && (
 						<Box is='section'>
 							<Box fontScale='h4' mbe={8} color='titles-labels'>
 								{t('Categories')}
