@@ -76,10 +76,6 @@ export interface ILivechatVisitorsModel extends IBaseModel<ILivechatVisitor> {
 
 	saveGuestEmailPhoneById(_id: string, emails: string[], phones: string[]): Promise<UpdateResult | Document | void>;
 
-	isVisitorActiveOnPeriod(visitorId: string, period: string): Promise<boolean>;
-
-	markVisitorActiveForPeriod(visitorId: string, period: string): Promise<UpdateResult>;
-
 	findOneEnabledById<T extends Document = ILivechatVisitor>(_id: string, options?: FindOptions<ILivechatVisitor>): Promise<T | null>;
 
 	findOneEnabledByIdAndSource<T extends Document = ILivechatVisitor>(
@@ -95,7 +91,6 @@ export interface ILivechatVisitorsModel extends IBaseModel<ILivechatVisitor> {
 		options?: FindOptions<ILivechatVisitor>,
 	): FindCursor<ILivechatVisitor>;
 
-	countVisitorsOnPeriod(period: string): Promise<number>;
 	saveGuestById(
 		_id: string,
 		data: { name?: string; username?: string; email?: string; phone?: string; livechatData: { [k: string]: any } },

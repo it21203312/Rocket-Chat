@@ -47,6 +47,10 @@ export class LivechatContactsRaw extends BaseRaw<ILivechatContact> implements IL
 				partialFilterExpression: { phones: { $exists: true } },
 				unique: false,
 			},
+			{
+				key: { activity: 1 },
+				partialFilterExpression: { activity: { $exists: true } },
+			},
 		];
 	}
 
@@ -194,5 +198,37 @@ export class LivechatContactsRaw extends BaseRaw<ILivechatContact> implements IL
 			},
 			options,
 		).toArray();
+	}
+
+	isContactActiveOnPeriod(visitorId: string, period: string): Promise<boolean> {
+		const query = {
+			'channels.visitorId': visitorId,
+			'activity': period,
+		};
+
+		return this.findOne(query, { projection: { _id: 1 } }).then(Boolean);
+	}
+
+	markContactActiveForPeriod(visitorId: string, period: string): Promise<UpdateResult> {
+		const query = {
+			'channels.visitorId': visitorId,
+		};
+
+		const update = {
+			$push: {
+				activity: {
+					$each: [period],
+					$slice: -12,
+				},
+			},
+		};
+
+		return this.updateOne(query, update);
+	}
+
+	countContactsOnPeriod(period: string): Promise<number> {
+		return this.countDocuments({
+			activity: period,
+		});
 	}
 }
