@@ -40,7 +40,7 @@
 		"babel-loader": "~8.3.0",
 		"eslint": "~8.45.0",
 		"react": "~17.0.2",
-		"react-hook-form": "~7.45.4",
+		"react-hook-form": "~7.53.1",
 		"react-i18next": "~13.2.2",
 		"storybook": "^8.3.6",
 		"storybook-dark-mode": "^4.0.2",
