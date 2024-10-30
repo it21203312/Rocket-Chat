@@ -3271,18 +3271,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@codemirror/lang-javascript@npm:^6.1.9":
-  version: 6.1.9
-  resolution: "@codemirror/lang-javascript@npm:6.1.9"
+"@codemirror/lang-javascript@npm:^6.2.2":
+  version: 6.2.2
+  resolution: "@codemirror/lang-javascript@npm:6.2.2"
   dependencies:
     "@codemirror/autocomplete": "npm:^6.0.0"
     "@codemirror/language": "npm:^6.6.0"
     "@codemirror/lint": "npm:^6.0.0"
     "@codemirror/state": "npm:^6.0.0"
-    "@codemirror/view": "npm:^6.0.0"
+    "@codemirror/view": "npm:^6.17.0"
     "@lezer/common": "npm:^1.0.0"
     "@lezer/javascript": "npm:^1.0.0"
-  checksum: 10/5b067a4bc1f97e422d54f7e3b6eba534b7a51efee05aa2c561745619080fc5f6748bd2b92f28e11f259297b6e3e7f6ae3f16c8f3d6a417e04ed5f320d6924061
+  checksum: 10/eac2e57a7a595cf0c93afd4bb42034902230c73e5525554ba925bad12aa544ca58014c017466288a2b34f1684d6efa5537507ed8b57e276d02665c2821c7a9d6
   languageName: node
   linkType: hard
 
@@ -3339,6 +3339,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@codemirror/state@npm:^6.4.0":
+  version: 6.4.1
+  resolution: "@codemirror/state@npm:6.4.1"
+  checksum: 10/a9ec56c7d7d52034ce8ebea3a9a4d216b9e972d701b32b5000e56c97790d0d46af129aeba0b80bed36648b4024b3ba3e4910cf5bfed11de4a9e89252e0707a70
+  languageName: node
+  linkType: hard
+
 "@codemirror/view@npm:^6.0.0, @codemirror/view@npm:^6.6.0":
   version: 6.12.0
   resolution: "@codemirror/view@npm:6.12.0"
@@ -3347,6 +3354,17 @@ __metadata:
     style-mod: "npm:^4.0.0"
     w3c-keyname: "npm:^2.2.4"
   checksum: 10/676ecb2582183f7cc662bcb2d641cc6bcea9779e5b428ba661953c2127bda2a90eecce08bdb7d04d28094808066e9a7cc84c19f981c567e253f3e9ac9f55cfb9
+  languageName: node
+  linkType: hard
+
+"@codemirror/view@npm:^6.17.0":
+  version: 6.34.1
+  resolution: "@codemirror/view@npm:6.34.1"
+  dependencies:
+    "@codemirror/state": "npm:^6.4.0"
+    style-mod: "npm:^4.1.0"
+    w3c-keyname: "npm:^2.2.4"
+  checksum: 10/012f195d7c9da2f9693b2192e0e52c7d3f94d9c887c46e218ddb36ee1a050978ee6a13c7d0207dd3fb970b4454198962112b9afe17e1f23d2b89a274b7d186a0
   languageName: node
   linkType: hard
 
@@ -11840,7 +11858,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@rocket.chat/uikit-playground@workspace:apps/uikit-playground"
   dependencies:
-    "@codemirror/lang-javascript": "npm:^6.1.9"
+    "@codemirror/lang-javascript": "npm:^6.2.2"
     "@codemirror/lang-json": "npm:^6.0.1"
     "@lezer/highlight": "npm:^1.1.6"
     "@rocket.chat/core-typings": "workspace:^"
@@ -36789,6 +36807,13 @@ __metadata:
   version: 4.0.3
   resolution: "style-mod@npm:4.0.3"
   checksum: 10/378608d77c13fe635e3e5231d0faf6da51cd87280399c5e9f266e5c8bf089949a6a2bc05cda39f470ff2084137b1314cea0b518fe7f5d0df5b8b0ba6a089733d
+  languageName: node
+  linkType: hard
+
+"style-mod@npm:^4.1.0":
+  version: 4.1.2
+  resolution: "style-mod@npm:4.1.2"
+  checksum: 10/9da37909d6dbc3c043ab6d18da5d997073a4698c91e86058293252493eb18aca4e44e3fb18f32fcee26dcee8785f393c6c95f3c96cc722a0dd6b8de622b5b293
   languageName: node
   linkType: hard
 
