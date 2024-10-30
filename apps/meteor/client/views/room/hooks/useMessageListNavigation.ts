@@ -21,7 +21,7 @@ export const useMessageListNavigation = (): { messageListRef: RefCallback<HTMLEl
 			let lastMessageFocused: HTMLElement | null = null;
 			let initialFocus = true;
 
-			if (!node) {
+			if (!node || !roomFocusManager) {
 				return;
 			}
 
