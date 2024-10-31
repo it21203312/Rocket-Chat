@@ -139,7 +139,7 @@ const AppDetails = ({ appId }: AppDetailsProps) => {
 						</Box>
 					)}
 
-					<AppDetailsAPIs appId={appId} />
+					{data?.installed && <AppDetailsAPIs appId={appId} />}
 				</Margins>
 			</Box>
 		</Box>

@@ -55,7 +55,7 @@ export const useInstallApp = (file: File): { install: () => void; isInstalling: 
 			onSettled: () => {
 				setInstalling(false);
 				setModal(null);
-				queryClient.invalidateQueries(['marketplace']);
+				queryClient.refetchQueries({ queryKey: ['marketplace'], exact: false });
 			},
 		},
 	);
