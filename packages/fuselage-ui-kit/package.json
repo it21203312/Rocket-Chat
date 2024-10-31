@@ -76,7 +76,7 @@
 		"@testing-library/user-event": "~14.5.2",
 		"@types/react": "~17.0.80",
 		"@types/react-dom": "~17.0.25",
-		"babel-loader": "~8.2.5",
+		"babel-loader": "~9.2.1",
 		"cross-env": "^7.0.3",
 		"eslint": "~8.45.0",
 		"i18next": "^23.10.1",
