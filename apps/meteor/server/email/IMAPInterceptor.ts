@@ -121,26 +121,19 @@ export class IMAPInterceptor extends EventEmitter {
 			this.stop();
 			return this.selfDisable();
 		}
+
 		if (this.backoff) {
 			clearTimeout(this.backoff);
 			this.backoffDurationMS = 3000;
 		}
-		const loop = async (): Promise<void> => {
-			logger.debug(`Reconnecting to ${this.config.user}: ${this.retries}`);
-			if (this.canRetry()) {
-				this.backoffDurationMS *= 2;
-				this.backoff = setTimeout(loop, this.backoffDurationMS);
-			} else {
-				logger.info(`IMAP reconnection failed on inbox ${this.config.user}`);
-				clearTimeout(this.backoff);
+
+		this.backoff = setTimeout(
+			() => {
 				this.stop();
-				await this.selfDisable();
-				return;
-			}
-			this.stop();
-			await this.start();
-		};
-		this.backoff = setTimeout(loop, this.backoffDurationMS);
+				void this.start();
+			},
+			(this.backoffDurationMS += this.backoffDurationMS),
+		);
 	}
 
 	imapSearch(): Promise<number[]> {
