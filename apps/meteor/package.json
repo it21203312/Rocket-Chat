@@ -338,7 +338,7 @@
 		"express": "^4.21.1",
 		"express-rate-limit": "^5.5.1",
 		"fastq": "^1.13.0",
-		"fflate": "^0.7.4",
+		"fflate": "^0.8.2",
 		"file-type": "^16.5.4",
 		"filenamify": "^4.3.0",
 		"filesize": "9.0.11",
