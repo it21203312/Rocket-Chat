@@ -4,7 +4,7 @@ import { useMutation } from '@tanstack/react-query';
 import { handleAPIError } from '../helpers/handleAPIError';
 import { warnAppInstall } from '../helpers/warnAppInstall';
 import { warnStatusChange } from '../helpers/warnStatusChange';
-import { useAppsOrchestration } from './useAppsOrchestration';
+import { useAppsOrchestrator } from './useAppsOrchestrator';
 
 type InstallAppParams = App & {
 	permissionsGranted?: AppPermission[];
@@ -15,11 +15,7 @@ type UpdateAppParams = App & {
 };
 
 export const useMarketplaceActions = () => {
-	const appsOrchestrator = useAppsOrchestration();
-
-	if (!appsOrchestrator) {
-		throw new Error('Apps orchestrator is not available');
-	}
+	const appsOrchestrator = useAppsOrchestrator();
 
 	const installAppMutation = useMutation(
 		({ id, marketplaceVersion, permissionsGranted }: InstallAppParams) =>

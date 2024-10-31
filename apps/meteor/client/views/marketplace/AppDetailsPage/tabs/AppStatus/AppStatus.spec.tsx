@@ -4,7 +4,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
 
-import { mockedAppsContext } from '../../../../../../tests/mocks/client/marketplace';
+import { mockedAppsOrchestratorContext } from '../../../../../../tests/mocks/client/marketplace';
 import { createFakeApp, createFakeLicenseInfo } from '../../../../../../tests/mocks/data';
 import AppStatus from './AppStatus';
 
@@ -25,7 +25,7 @@ it('should look good', async () => {
 			.withEndpoint('GET', '/v1/licenses.info', async () => ({
 				license: createFakeLicenseInfo(),
 			}))
-			.wrap(mockedAppsContext)
+			.wrap(mockedAppsOrchestratorContext)
 			.build(),
 	});
 

@@ -4,10 +4,8 @@ import type { ISetting } from '@rocket.chat/apps-engine/definition/settings';
 import type { Serialized } from '@rocket.chat/core-typings';
 import { createContext } from 'react';
 
-import type { IAppExternalURL, ICategory } from '../apps/@types/IOrchestrator';
-import type { AsyncState } from '../lib/asyncState';
-import { AsyncStatePhase } from '../lib/asyncState';
-import type { App } from '../views/marketplace/types';
+import type { IAppExternalURL, ICategory } from '../../apps/@types/IOrchestrator';
+import type { App } from './types';
 
 export interface IAppsOrchestrator {
 	load(): Promise<void>;
@@ -26,32 +24,21 @@ export interface IAppsOrchestrator {
 	getCategories(): Promise<Serialized<ICategory[]>>;
 }
 
-export type AppsContextValue = {
-	installedApps: AsyncState<{ apps: App[] }>;
-	marketplaceApps: AsyncState<{ apps: App[] }>;
-	privateApps: AsyncState<{ apps: App[] }>;
-	reload: () => Promise<void>;
-	orchestrator?: IAppsOrchestrator;
-	privateAppsEnabled: boolean;
-};
-
-export const AppsContext = createContext<AppsContextValue>({
-	installedApps: {
-		phase: AsyncStatePhase.LOADING,
-		value: undefined,
-		error: undefined,
+export const AppsOrchestratorContext = createContext<IAppsOrchestrator>({
+	load: () => Promise.resolve(),
+	getAppClientManager: () => {
+		throw new Error('not implemented');
 	},
-	marketplaceApps: {
-		phase: AsyncStatePhase.LOADING,
-		value: undefined,
-		error: undefined,
-	},
-	privateApps: {
-		phase: AsyncStatePhase.LOADING,
-		value: undefined,
-		error: undefined,
-	},
-	reload: () => Promise.resolve(),
-	orchestrator: undefined,
-	privateAppsEnabled: false,
+	handleError: () => undefined,
+	getInstalledApps: async () => [],
+	getAppsFromMarketplace: async () => ({ apps: [] }),
+	getAppsOnBundle: async () => [],
+	getApp: () => Promise.reject(new Error('not implemented')),
+	setAppSettings: async () => undefined,
+	installApp: () => Promise.reject(new Error('not implemented')),
+	updateApp: () => Promise.reject(new Error('not implemented')),
+	buildExternalUrl: () => Promise.reject(new Error('not implemented')),
+	buildExternalAppRequest: () => Promise.reject(new Error('not implemented')),
+	buildIncompatibleExternalUrl: () => Promise.reject(new Error('not implemented')),
+	getCategories: () => Promise.reject(new Error('not implemented')),
 });

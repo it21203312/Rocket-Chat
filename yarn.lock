@@ -9241,7 +9241,9 @@ __metadata:
     "@storybook/addon-webpack5-compiler-babel": "npm:^3.0.3"
     "@storybook/react": "npm:^8.3.6"
     "@storybook/react-webpack5": "npm:^8.3.6"
+    "@storybook/test": "npm:~8.3.6"
     "@tanstack/react-query": "npm:^4.36.1"
+    "@tanstack/react-query-devtools": "npm:^4.19.1"
     "@testing-library/react": "npm:~16.0.1"
     "@testing-library/user-event": "npm:~14.5.2"
     "@types/adm-zip": "npm:^0.5.5"
@@ -11270,7 +11272,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/test@npm:8.3.6":
+"@storybook/test@npm:8.3.6, @storybook/test@npm:~8.3.6":
   version: 8.3.6
   resolution: "@storybook/test@npm:8.3.6"
   dependencies:
@@ -11470,10 +11472,34 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tanstack/match-sorter-utils@npm:^8.7.0":
+  version: 8.7.2
+  resolution: "@tanstack/match-sorter-utils@npm:8.7.2"
+  dependencies:
+    remove-accents: "npm:0.4.2"
+  checksum: 10/388e1c4230183d169fff5ec268b10670125b1cd6db02b2ca8a91fd2dc4c83b68fd9fd744aa0a700badfb59e0a92d68ab102e33219047087b3f2c24591cf22c62
+  languageName: node
+  linkType: hard
+
 "@tanstack/query-core@npm:4.36.1":
   version: 4.36.1
   resolution: "@tanstack/query-core@npm:4.36.1"
   checksum: 10/7c648872cd491bcab2aa4c18e0b7ca130c072f05c277a5876977fa3bfa87634bbfde46e9d249236587d78c39866889a02e4e202b478dc6074ff96093732ae56d
+  languageName: node
+  linkType: hard
+
+"@tanstack/react-query-devtools@npm:^4.19.1":
+  version: 4.20.4
+  resolution: "@tanstack/react-query-devtools@npm:4.20.4"
+  dependencies:
+    "@tanstack/match-sorter-utils": "npm:^8.7.0"
+    superjson: "npm:^1.10.0"
+    use-sync-external-store: "npm:^1.2.0"
+  peerDependencies:
+    "@tanstack/react-query": 4.20.4
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: 10/4f3a3d7b697fb18343188925e976762b2fb1be10f0e6a9192c1b5975749a5351c9f9c2b4124fe6860c9d689605966a41e8d5184d454b7dd06deb877bc1c38e8d
   languageName: node
   linkType: hard
 
@@ -17825,6 +17851,15 @@ __metadata:
   version: 2.1.4
   resolution: "cookiejar@npm:2.1.4"
   checksum: 10/4a184f5a0591df8b07d22a43ea5d020eacb4572c383e853a33361a99710437eaa0971716c688684075bbf695b484f5872e9e3f562382e46858716cb7fc8ce3f4
+  languageName: node
+  linkType: hard
+
+"copy-anything@npm:^3.0.2":
+  version: 3.0.3
+  resolution: "copy-anything@npm:3.0.3"
+  dependencies:
+    is-what: "npm:^4.1.8"
+  checksum: 10/d376bfd5f657c96e9b0ef5e8709dcb52bc085c0af7b1c30c6c0337fa9ce56287bf0aaf4db13f9931b504ee5f6beb4494d9ca1b6e947a12995476ca288b3653c6
   languageName: node
   linkType: hard
 
@@ -24960,6 +24995,13 @@ __metadata:
     call-bind: "npm:^1.0.2"
     get-intrinsic: "npm:^1.1.1"
   checksum: 10/8f2ddb9639716fd7936784e175ea1183c5c4c05274c34f34f6a53175313cb1c9c35a8b795623306995e2f7cc8f25aa46302f15a2113e51c5052d447be427195c
+  languageName: node
+  linkType: hard
+
+"is-what@npm:^4.1.8":
+  version: 4.1.8
+  resolution: "is-what@npm:4.1.8"
+  checksum: 10/943eca6c1e64df487060857a4b6ac2e584b99e633a96e64c82bd49584a85d91f6f3e22d4a2d28c1243522152b261f50021db40a5ef7d98c754ebc7209c87b071
   languageName: node
   linkType: hard
 
@@ -32939,6 +32981,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"remove-accents@npm:0.4.2":
+  version: 0.4.2
+  resolution: "remove-accents@npm:0.4.2"
+  checksum: 10/25d5c84f1355be60b42f8ad8a1ba29c2413dead138a9e2a88633e4fc94a1b953afe306dd27479125aef231d267482c54d292e558b04ec100fb9adf063ccbf75a
+  languageName: node
+  linkType: hard
+
 "remove-markdown@npm:^0.2.2":
   version: 0.2.2
   resolution: "remove-markdown@npm:0.2.2"
@@ -35371,6 +35420,15 @@ __metadata:
     mime: "npm:2.6.0"
     qs: "npm:^6.11.0"
   checksum: 10/d3c0c9051ceec84d5b431eaa410ad81bcd53255cea57af1fc66d683a24c34f3ba4761b411072a9bf489a70e3d5b586a78a0e6f2eac6a561067e7d196ddab0907
+  languageName: node
+  linkType: hard
+
+"superjson@npm:^1.10.0":
+  version: 1.12.1
+  resolution: "superjson@npm:1.12.1"
+  dependencies:
+    copy-anything: "npm:^3.0.2"
+  checksum: 10/e593e4de8a77c3ba7cbc5f50aafedd5202aa588f63ad8ea4f7be20dda1253b35d7e0690174afc8e0d6ea5e9f3b8547e872e07c68f99598f3e5bd5c45af57a1fc
   languageName: node
   linkType: hard
 

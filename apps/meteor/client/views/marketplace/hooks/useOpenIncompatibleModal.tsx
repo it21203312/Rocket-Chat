@@ -3,16 +3,12 @@ import React, { useCallback } from 'react';
 
 import IframeModal from '../IframeModal';
 import { handleAPIError } from '../helpers/handleAPIError';
-import { useAppsOrchestration } from './useAppsOrchestration';
+import { useAppsOrchestrator } from './useAppsOrchestrator';
 
 export const useOpenIncompatibleModal = () => {
 	const setModal = useSetModal();
 
-	const appsOrchestrator = useAppsOrchestration();
-
-	if (!appsOrchestrator) {
-		throw new Error('Apps orchestrator is not available');
-	}
+	const appsOrchestrator = useAppsOrchestrator();
 
 	return useCallback(
 		async (app, actionName, cancelAction) => {
