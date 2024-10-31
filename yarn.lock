@@ -12884,7 +12884,7 @@ __metadata:
 "@types/mocha@github:whitecolor/mocha-types":
   version: 8.0.0
   resolution: "@types/mocha@https://github.com/whitecolor/mocha-types.git#commit=da22474cf43f48a56c86f8c23a5a0ea36e295768"
-  checksum: 10/8821dd8701ae1ddf24505139de2b5a4780a1391c62d86d26c27cce08ddc161774f9acddd68581030954742ef3bbc71bfae467be586a6ab8a631ea28297c87a8a
+  checksum: 10/5a7f7797d800171867b6addae0a0c7007bb23d711eb05aae9f96c938188bbded3e623b684424a24325625af5a01ec92c824c2c8f984a5d173f3de1fe15a6d210
   languageName: node
   linkType: hard
 
@@ -20546,7 +20546,7 @@ __metadata:
 "esl@github:pierre-lehnen-rc/esl":
   version: 11.1.1
   resolution: "esl@https://github.com/pierre-lehnen-rc/esl.git#commit=22f2167a4acaa129d214592cfb0d46a419d08663"
-  checksum: 10/6a67c2e77b292d1dc419f753d67ef0114b8509d1c21a8b4509233d09d0e69d603a2451feae36f7bc380875587a6826cd7d9e7608e8d64b937cf2711546e6cbed
+  checksum: 10/8be6cf4eda4fd71a6655e9d76a277f4a40bb44568eb989efa88f332629a92cc0b60f30e052ae385b6c7fa4ff08d989691e8ab631592f6bf59ee6f253ce274a0f
   languageName: node
   linkType: hard
 
@@ -26424,7 +26424,7 @@ __metadata:
   resolution: "lamejs@https://github.com/zhuker/lamejs.git#commit=582bbba6a12f981b984d8fb9e1874499fed85675"
   dependencies:
     use-strict: "npm:1.0.1"
-  checksum: 10/cf671c57f8ef3ca2fec188785e84c96681a74bbd41d64efbb32b65a1a9375b7d7c5f749e4f8ec24a3e7d4011d465dc33bb7c1ce05979640065b94b24d3598738
+  checksum: 10/080767bca3c1985fde5fdaa406c324446a1d16c1fdc2654434b3199e3c3c25f056ea8e9fff328e9fccb778de3d6bf54adc35b87a4227f3ea00d6a1278bd32222
   languageName: node
   linkType: hard
 
