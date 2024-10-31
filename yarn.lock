@@ -9386,7 +9386,7 @@ __metadata:
     expiry-map: "npm:^2.0.0"
     express: "npm:^4.21.1"
     express-rate-limit: "npm:^5.5.1"
-    fast-glob: "npm:^3.2.12"
+    fast-glob: "npm:^3.3.2"
     fastq: "npm:^1.13.0"
     fflate: "npm:^0.7.4"
     file-type: "npm:^16.5.4"
@@ -21354,7 +21354,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-glob@npm:^3.0.3, fast-glob@npm:^3.2.11, fast-glob@npm:^3.2.12, fast-glob@npm:^3.2.7, fast-glob@npm:^3.2.9":
+"fast-glob@npm:^3.0.3, fast-glob@npm:^3.2.11, fast-glob@npm:^3.2.7, fast-glob@npm:^3.2.9":
   version: 3.2.12
   resolution: "fast-glob@npm:3.2.12"
   dependencies:
