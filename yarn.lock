@@ -9035,7 +9035,7 @@ __metadata:
     postcss-loader: "npm:^8.1.1"
     postcss-logical: "npm:^4.0.2"
     postcss-scss: "npm:^4.0.9"
-    postcss-selector-not: "npm:^4.0.1"
+    postcss-selector-not: "npm:^8.0.1"
     preact: "npm:~10.24.3"
     preact-router: "npm:^3.2.1"
     query-string: "npm:^7.1.3"
@@ -31018,13 +31018,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-selector-not@npm:^4.0.1":
-  version: 4.0.1
-  resolution: "postcss-selector-not@npm:4.0.1"
+"postcss-selector-not@npm:^8.0.1":
+  version: 8.0.1
+  resolution: "postcss-selector-not@npm:8.0.1"
   dependencies:
-    balanced-match: "npm:^1.0.0"
-    postcss: "npm:^7.0.2"
-  checksum: 10/08fbd3e5ca273f3b767bd35d6bd033647a68f59b596d8aec19a9089b750539bdf85121ed7fd00a7763174a55c75c22a309d75d306127e23dc396069781efbaa4
+    postcss-selector-parser: "npm:^7.0.0"
+  peerDependencies:
+    postcss: ^8.4
+  checksum: 10/28c1f7863ac85016ecd695304ee1eb21b1128eacba333d6d4540fd93691c58ff6329ac323b6a640f2da918e95c7b58e8f534c8b6e2ed016f6e31cdfdc743edbc
   languageName: node
   linkType: hard
 
@@ -31067,6 +31068,16 @@ __metadata:
     cssesc: "npm:^3.0.0"
     util-deprecate: "npm:^1.0.2"
   checksum: 10/190034c94d809c115cd2f32ee6aade84e933450a43ec3899c3e78e7d7b33efd3a2a975bb45d7700b6c5b196c06a7d9acf3f1ba6f1d87032d9675a29d8bca1dd3
+  languageName: node
+  linkType: hard
+
+"postcss-selector-parser@npm:^7.0.0":
+  version: 7.0.0
+  resolution: "postcss-selector-parser@npm:7.0.0"
+  dependencies:
+    cssesc: "npm:^3.0.0"
+    util-deprecate: "npm:^1.0.2"
+  checksum: 10/0e92be7281e2b440a8be8cf207de40a24ca7bc765577916499614d5a47827a3e658206728cc559db96803e554270516104aad919a04f91bfa8914ccef1ba14ca
   languageName: node
   linkType: hard
 
