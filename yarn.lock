@@ -9388,7 +9388,7 @@ __metadata:
     express-rate-limit: "npm:^5.5.1"
     fast-glob: "npm:^3.2.12"
     fastq: "npm:^1.13.0"
-    fflate: "npm:^0.7.4"
+    fflate: "npm:^0.8.2"
     file-type: "npm:^16.5.4"
     filenamify: "npm:^4.3.0"
     filesize: "npm:9.0.11"
@@ -21519,10 +21519,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fflate@npm:^0.7.4":
-  version: 0.7.4
-  resolution: "fflate@npm:0.7.4"
-  checksum: 10/27f61b3536c3a23b0ccdab4b616103be0e8e7241924cda063486822c50ae11930eb1ce6e34dedbfccb2705d04a66380d04e28c67387e1dd48159d41ea14bfda5
+"fflate@npm:^0.8.2":
+  version: 0.8.2
+  resolution: "fflate@npm:0.8.2"
+  checksum: 10/2bd26ba6d235d428de793c6a0cd1aaa96a06269ebd4e21b46c8fd1bd136abc631acf27e188d47c3936db090bf3e1ede11d15ce9eae9bffdc4bfe1b9dc66ca9cb
   languageName: node
   linkType: hard
 
