@@ -33,7 +33,7 @@
 	},
 	"dependencies": {
 		"@rocket.chat/core-services": "workspace:^",
-		"@rocket.chat/core-typings": "workspace:^",
+		"@rocket.chat/core-typings": "6.3.0",
 		"@rocket.chat/models": "workspace:^",
 		"mongodb": "patch:mongodb@npm%3A4.17.2#~/.yarn/patches/mongodb-npm-4.17.2-40d1286d70.patch"
 	}
