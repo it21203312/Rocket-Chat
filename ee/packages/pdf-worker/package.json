@@ -19,7 +19,7 @@
 	},
 	"dependencies": {
 		"@react-pdf/renderer": "^3.4.5",
-		"@rocket.chat/core-typings": "workspace:^",
+		"@rocket.chat/core-typings": "6.3.0",
 		"@rocket.chat/fuselage-tokens": "^0.33.1",
 		"emoji-assets": "^7.0.1",
 		"emoji-toolkit": "^7.0.1",
