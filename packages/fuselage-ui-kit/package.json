@@ -40,9 +40,9 @@
 		".:build-preview-move": "mkdir -p ../../.preview/ && cp -r ./storybook-static ../../.preview/fuselage-ui-kit"
 	},
 	"dependencies": {
-		"@rocket.chat/core-typings": "workspace:^",
+		"@rocket.chat/core-typings": "6.3.0",
 		"@rocket.chat/gazzodown": "workspace:^",
-		"@rocket.chat/ui-kit": "workspace:~"
+		"@rocket.chat/ui-kit": "0.2.0"
 	},
 	"devDependencies": {
 		"@babel/core": "~7.26.0",
@@ -50,7 +50,7 @@
 		"@babel/preset-react": "~7.25.9",
 		"@babel/preset-typescript": "~7.26.0",
 		"@rocket.chat/apps-engine": "workspace:^",
-		"@rocket.chat/core-typings": "workspace:^",
+		"@rocket.chat/core-typings": "6.3.0",
 		"@rocket.chat/eslint-config": "workspace:^",
 		"@rocket.chat/fuselage": "^0.59.3",
 		"@rocket.chat/fuselage-hooks": "^0.33.1",
@@ -62,7 +62,7 @@
 		"@rocket.chat/styled": "~0.31.25",
 		"@rocket.chat/ui-avatar": "workspace:^",
 		"@rocket.chat/ui-contexts": "workspace:^",
-		"@rocket.chat/ui-kit": "workspace:~",
+		"@rocket.chat/ui-kit": "0.2.0",
 		"@rocket.chat/ui-video-conf": "workspace:^",
 		"@storybook/addon-essentials": "^8.3.6",
 		"@storybook/addon-styling-webpack": "^1.0.0",
