@@ -31,8 +31,8 @@
 		"extends": "../../../package.json"
 	},
 	"dependencies": {
-		"@rocket.chat/api-client": "workspace:^",
-		"@rocket.chat/core-typings": "workspace:~",
-		"@rocket.chat/rest-typings": "workspace:^"
+		"@rocket.chat/api-client": "0.1.0",
+		"@rocket.chat/core-typings": "6.3.0",
+		"@rocket.chat/rest-typings": "6.3.0"
 	}
 }
