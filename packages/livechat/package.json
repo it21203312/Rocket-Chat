@@ -97,9 +97,9 @@
 	},
 	"dependencies": {
 		"@rocket.chat/gazzodown": "workspace:^",
-		"@rocket.chat/message-parser": "workspace:^",
+		"@rocket.chat/message-parser": "0.23.0",
 		"@rocket.chat/random": "workspace:~",
-		"@rocket.chat/ui-kit": "workspace:~",
+		"@rocket.chat/ui-kit": "0.2.0",
 		"css-vars-ponyfill": "^2.4.9",
 		"date-fns": "^2.30.0",
 		"emoji-mart": "^3.0.1",
