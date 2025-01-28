@@ -377,7 +377,7 @@
 		"mem": "^8.1.1",
 		"meteor-node-stubs": "^1.2.10",
 		"mime-db": "^1.52.0",
-		"mime-type": "^4.0.0",
+		"mime-type": "^5.0.1",
 		"mkdirp": "^1.0.4",
 		"moleculer": "^0.14.34",
 		"moment": "^2.29.4",
