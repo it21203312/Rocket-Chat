@@ -40,7 +40,7 @@
 		".:build-preview-move": "mkdir -p ../../.preview/ && cp -r ./storybook-static ../../.preview/fuselage-ui-kit"
 	},
 	"dependencies": {
-		"@rocket.chat/core-typings": "workspace:^",
+		"@rocket.chat/core-typings": "6.3.0",
 		"@rocket.chat/gazzodown": "workspace:^",
 		"@rocket.chat/ui-kit": "workspace:~"
 	},
@@ -50,7 +50,7 @@
 		"@babel/preset-react": "~7.25.9",
 		"@babel/preset-typescript": "~7.26.0",
 		"@rocket.chat/apps-engine": "workspace:^",
-		"@rocket.chat/core-typings": "workspace:^",
+		"@rocket.chat/core-typings": "6.3.0",
 		"@rocket.chat/eslint-config": "workspace:^",
 		"@rocket.chat/fuselage": "^0.59.3",
 		"@rocket.chat/fuselage-hooks": "^0.33.1",
