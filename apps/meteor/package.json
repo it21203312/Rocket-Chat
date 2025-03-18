@@ -249,7 +249,7 @@
 		"@rocket.chat/fuselage-polyfills": "~0.31.25",
 		"@rocket.chat/fuselage-toastbar": "^0.33.0",
 		"@rocket.chat/fuselage-tokens": "^0.33.1",
-		"@rocket.chat/fuselage-ui-kit": "workspace:^",
+		"@rocket.chat/fuselage-ui-kit": "0.2.0",
 		"@rocket.chat/gazzodown": "workspace:^",
 		"@rocket.chat/i18n": "workspace:^",
 		"@rocket.chat/icons": "~0.38.0",
@@ -437,7 +437,7 @@
 		"use-sync-external-store": "^1.2.2",
 		"uuid": "^11.0.2",
 		"webdav": "^4.11.4",
-		"xml-crypto": "~3.1.0",
+		"xml-crypto": "~3.2.1",
 		"xml-encryption": "~3.0.2",
 		"xml2js": "~0.6.2",
 		"yaqrcode": "^0.2.1"
