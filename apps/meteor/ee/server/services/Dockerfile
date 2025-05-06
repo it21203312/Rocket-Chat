@@ -28,7 +28,7 @@ COPY ./tsconfig.base.json .
 RUN yarn workspace @rocket.chat/core-typings run build \
     && yarn workspace @rocket.chat/rest-typings run build
 
-FROM node:20.18.0-alpine3.20
+FROM node:20.19.1-alpine3.20
 
 ARG SERVICE
 
