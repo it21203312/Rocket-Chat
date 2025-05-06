@@ -427,7 +427,7 @@
 		"swiper": "^9.4.1",
 		"textarea-caret": "^3.1.0",
 		"tinykeys": "^1.4.0",
-		"twilio": "^3.76.1",
+		"twilio": "^5.6.0",
 		"twit": "^2.2.11",
 		"typia": "~6.11.3",
 		"ua-parser-js": "^1.0.39",
