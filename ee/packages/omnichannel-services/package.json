@@ -22,7 +22,7 @@
 		"@rocket.chat/string-helpers": "~0.31.25",
 		"@rocket.chat/tools": "workspace:^",
 		"@types/node": "~20.16.12",
-		"date-fns": "^2.30.0",
+		"date-fns": "^3.0.0",
 		"ejson": "^2.2.3",
 		"emoji-toolkit": "^7.0.1",
 		"eventemitter3": "^5.0.1",
