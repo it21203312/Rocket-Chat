@@ -15,7 +15,7 @@
 	"dependencies": {
 		"@swc/core": "~1.7.40",
 		"@swc/jest": "~0.2.36",
-		"@testing-library/jest-dom": "~6.4.8",
+		"@testing-library/jest-dom": "~6.5.0",
 		"@types/jest-axe": "~3.5.9",
 		"identity-obj-proxy": "~3.0.0",
 		"jest-axe": "~9.0.0",
