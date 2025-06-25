@@ -24,7 +24,7 @@
 		"/dist"
 	],
 	"dependencies": {
-		"@rocket.chat/core-typings": "workspace:^",
+		"@rocket.chat/core-typings": "6.3.0",
 		"@rocket.chat/message-parser": "workspace:^",
 		"@rocket.chat/ui-kit": "workspace:~",
 		"ajv": "^8.17.1",
