@@ -19,6 +19,6 @@
 		"/dist"
 	],
 	"dependencies": {
-		"@rocket.chat/core-typings": "workspace:^"
+		"@rocket.chat/core-typings": "6.3.0"
 	}
 }
